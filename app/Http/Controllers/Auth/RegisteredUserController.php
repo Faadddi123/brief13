@@ -42,7 +42,7 @@ class RegisteredUserController extends Controller
             'role' => 'required',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-        \\wsl.localhost\Ubuntu\home\haughtrick\totalproject\brief13\app\Http\Controllers\Auth\PasswordController.php    
+
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');

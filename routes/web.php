@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
 // web.php
 Route::get('/jeux', function () {
     return view('jeux.jeux'); // Assuming 'jeux' is the name of the Blade view file
-})->name('jeux.jeux');
+})->middleware(['auth', 'verified'])->name('jeux.jeux');
 
 
 
