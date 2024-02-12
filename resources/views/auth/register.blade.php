@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
+    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
         @csrf
         <div class="flex justify-center mt-8">
             
@@ -36,6 +36,12 @@
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
+         <!-- phone -->
+        <div>
+            <x-input-label for="phone" :value="__('phone')" />
+            <x-text-input id="phone" class="block mt-1 w-full" type="phone" name="phone" :value="old('phone')" required autofocus autocomplete="phone" />
+            <x-input-error :messages="$errors->get('phone')" class="mt-2" />
+        </div>
 
         <!-- Password -->
         <div class="mt-4">
@@ -48,6 +54,7 @@
 
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
+        
 
         <!-- Confirm Password -->
         <div class="mt-4">
@@ -68,7 +75,7 @@
                 @endforeach
             </select>
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+            <x-input-error :messages="$errors->get('chose a role')" class="mt-2" />
         </div>
         
 
