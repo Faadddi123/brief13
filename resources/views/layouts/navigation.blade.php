@@ -21,11 +21,26 @@
                         {{ __('jeux') }}
                     </x-nav-link>
                 </div>
-                {{-- <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('taxis')" :active="request()->routeIs('taxis')">
-                        {{ __('taxis') }}
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('show_all_roads')" :active="request()->routeIs('show_all_roads')">
+                        {{ __('trajets') }}
                     </x-nav-link>
-                </div> --}}
+                </div>
+                @if (Auth::user()->roles->first()->name == 'passenger')
+                                
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('add_road')" :active="request()->routeIs('addtrajet')">
+                        {{ __('search for road') }}
+                    </x-nav-link>
+                </div>
+                @elseif (Auth::user()->roles->first()->name == 'driver')
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('add_road')" :active="request()->routeIs('addtrajet')">
+                        {{ __('Add Road') }}
+                    </x-nav-link>
+                </div>
+                @endif
+
             </div>
 
             <!-- Settings Dropdown -->

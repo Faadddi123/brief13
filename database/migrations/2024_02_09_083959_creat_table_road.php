@@ -18,6 +18,7 @@ return new class extends Migration
             $table->float('distance');
             
             $table->timestamps();
+            $table->unique(['city_start', 'city_arrive']);
         });
     }
 

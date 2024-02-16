@@ -3,8 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Database\Seeders\AdminSeederInport;
 use Database\Seeders\RolesSeeder;
+use Database\Seeders\cities_with_API;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\User;
@@ -24,6 +26,7 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call(RolesSeeder::class);
         $this->call(AdminSeederInport::class);
+        $this->call(cities_with_API::class);
     }
 }
 
